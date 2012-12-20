@@ -27,15 +27,17 @@ if (Meteor.isClient) {
 if (Meteor.isServer) {
   Meteor.startup(function () {
     Pieces.remove({});
-    // var names = [
-    //   ["king", 0, 0],
-    //   ["knight", 50, 0],
-    //   ["rook", 100, 0]
-    // ];
-    // for (var i = 0; i < names.length; i++){
-    //   Pieces.insert({
-    //     name: names[i]
-    //   });
-    // }
+    var names = [
+      ["king", 500, 0],
+      // ["knight", 50, 0],
+      // ["rook", 100, 0]
+    ];
+    for (var i = 0; i < names.length; i++){
+      Pieces.insert({
+        name: names[0],
+        x: names[1],
+        y: names[2],
+      });
+    }
   });
 }

@@ -7,8 +7,15 @@
   {{> hello}}
 </body>
 
+<template name="piece">
+  piece
+</template>
+
 <template name="hello">
   <div style="float:left;margin-right:70px">
+    {{#each pieces}}
+      {{> piece}}
+    {{/each}}
     <table>
       <tr class="even">
         <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> 
@@ -36,5 +43,4 @@
       </tr>
     </table>
   </div>
-  <!-- <input type="button" value="Click" /> -->
 </template>

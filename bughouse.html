@@ -5,7 +5,14 @@
 <body>
   {{> hello}}
   {{> hello}}
+  {{> pieces }}
 </body>
+
+<template name="pieces">
+  {{#each pieces}}
+    {{> piece}}
+  {{/each}}
+</template>
 
 <template name="piece">
   <span class="piece" style="left:{{x}}px;top:{{y}}px;">{{name}}</span>
@@ -13,33 +20,30 @@
 
 <template name="hello">
   <div style="float:left;margin-right:70px">
-    {{#each pieces}}
-      {{> piece}}
-    {{/each}}
     <table>
       <tr class="even">
-        <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td> 
       </tr>
       <tr class="odd">
-        <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td> 
       </tr>
       <tr class="even">
-        <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td> 
       </tr>
       <tr class="odd">
-        <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td> 
       </tr>
       <tr class="even">
-        <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td> 
       </tr>
       <tr class="odd">
-        <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td> 
       </tr>
       <tr class="even">
-        <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td> 
       </tr>
       <tr class="odd">
-        <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> 
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td> 
       </tr>
     </table>
   </div>

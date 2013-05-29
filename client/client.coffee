@@ -6,12 +6,12 @@ Template.pieces.rendered = ->
     Pieces.update({_id: $(this).attr("id")}, {$set: {col: 4}})
 
 Template.piece.computedX = ->
-  res = @row * 51 + 5 + 490 * @boardnum # 0 or 1
-  res = 857 - res if reversed()
+  res = @row * 50 + 5 + 480 * @boardnum # 0 or 1
+  res = 840 - res if reversed()
   res
 Template.piece.computedY = ->
-  res = @col * 52 - 2
-  res = 360 - res if reversed()
+  res = @col * 50 - 5
+  res = 340 - res if reversed()
   res
 
 Template.controls.events

@@ -1,6 +1,6 @@
 body,html { margin: 0px; }
-table { float:left;margin-right:70px }
-td { width:50px; height:50px; background-color:#aaa; }
+table { float:left;margin-right:70px;border-collapse:collapse; }
+td { width:50px; height:49px; background-color:#aaa; }
 tr.odd :nth-child(2), tr.odd :nth-child(4), tr.odd :nth-child(6),
 tr.odd :nth-child(8), tr.even :nth-child(1), tr.even :nth-child(3),
 tr.even :nth-child(5), tr.even :nth-child(7) { background-color:#eee; }

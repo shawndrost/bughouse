@@ -4,7 +4,9 @@ Template.pieces.pieces = ->
   p = Pieces.find().fetch()
   p.reverse() if reversed()
   p
-Template.pieces.rendered = -> $(".piece").draggable()
+Template.pieces.rendered = ->
+  $(".piece").draggable stop: ->
+    console.log "stopping"
 
 Template.piece.computedX = ->
   val = 0

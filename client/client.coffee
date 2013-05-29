@@ -9,9 +9,7 @@ Template.pieces.rendered = ->
     console.log "stopping"
 
 Template.piece.computedX = ->
-  val = 0
-  val += 490 if @firstboard
-  val += @row * 51 + 5
+  @row * 51 + 5 + 490 * @boardnum # 0 or 1
 Template.piece.computedY = ->
   @col * 52 - 2
 

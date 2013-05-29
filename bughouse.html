@@ -3,15 +3,20 @@
 </head>
 
 <body>
-  {{> hello}}
-  {{> hello}}
+  {{> hello }}
+  {{> hello }}
   {{> pieces }}
+  {{> controls }}
 </body>
 
 <template name="pieces">
   {{#each pieces}}
     {{> piece}}
   {{/each}}
+</template>
+
+<template name="controls">
+  <button>reverse</button>
 </template>
 
 <template name="piece">

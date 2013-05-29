@@ -32,6 +32,10 @@ Board.prototype.each = function(cb){
     cb(i%8, ~~(i/8), this.letters[i]);
   }
 }
+Board.prototype.reverse = function(){
+  this.letters = this.letters.split("").reverse().join("");
+  return this;
+}
 
 if (Meteor.isServer) {
   Meteor.startup(function () {
@@ -41,6 +45,13 @@ if (Meteor.isServer) {
       Pieces.insert({
         name: ltr,
         x: row * 51 + 5,
+        y: col * 52 - 2
+      });
+    });
+    board.reverse().each(function(row, col, ltr){
+      Pieces.insert({
+        name: ltr,
+        x: row * 51 + 5 + 490,
         y: col * 52 - 2
       });
     });

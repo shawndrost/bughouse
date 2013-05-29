@@ -24,20 +24,25 @@ if (Meteor.isClient) {
   };
 }
 
+var Board = function(){
+  this.letters = "♖♘♗♔♕♗♘♖♙♙♙♙♙♙♙♙                                ♟♟♟♟♟♟♟♟♜♞♝♚♛♝♞♜";
+}
+Board.prototype.each = function(cb){
+  for(var i = 0; i < this.letters.length; i++){
+    cb(i%8, ~~(i/8), this.letters[i]);
+  }
+}
+
 if (Meteor.isServer) {
   Meteor.startup(function () {
+    var board = new Board();
     Pieces.remove({});
-    var names = [
-      ["king", 500, 0],
-      // ["knight", 50, 0],
-      // ["rook", 100, 0]
-    ];
-    for (var i = 0; i < names.length; i++){
+    board.each(function(row, col, ltr){
       Pieces.insert({
-        name: names[0],
-        x: names[1],
-        y: names[2],
+        name: ltr,
+        x: row * 51 + 5,
+        y: col * 52 - 2
       });
-    }
+    });
   });
 }

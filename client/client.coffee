@@ -3,7 +3,11 @@ Meteor.startup -> reversed false
 Template.pieces.pieces = -> Pieces.find()
 Template.pieces.rendered = ->
   $(".piece").draggable stop: (e) ->
-    Pieces.update({_id: $(this).attr("id")}, {$set: {col: 4}})
+    row = ~~((e.clientX % 480) / 50)
+    col = ~~(e.clientY / 50)
+    [row, col] = [7-row, 7-col] if reversed()
+    _id = $(this).attr("id")
+    Pieces.update({_id}, {$set: {row, col}})
 
 Template.piece.computedX = ->
   res = @row * 50 + 5 + 480 * @boardnum # 0 or 1

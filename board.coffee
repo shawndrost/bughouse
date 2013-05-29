@@ -1,5 +1,3 @@
-@Pieces = new Meteor.Collection "players"
-
 @Board = ->
   @letters = "♖♘♗♔♕♗♘♖♙♙♙♙♙♙♙♙                                ♟♟♟♟♟♟♟♟♜♞♝♚♛♝♞♜"
 

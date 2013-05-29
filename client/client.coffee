@@ -11,9 +11,9 @@ Template.pieces.rendered = ->
 Template.piece.computedX = ->
   val = 0
   val += 490 if @firstboard
-  val += @x * 51 + 5
+  val += @row * 51 + 5
 Template.piece.computedY = ->
-  @y * 52 - 2
+  @col * 52 - 2
 
 Template.controls.events
   "click button": -> reversed !reversed()

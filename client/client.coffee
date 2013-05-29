@@ -1,0 +1,1 @@
+Template.hello.pieces = -> Pieces.find()

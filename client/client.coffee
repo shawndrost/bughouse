@@ -6,6 +6,11 @@ Template.pieces.pieces = ->
   p
 Template.pieces.rendered = -> $(".piece").draggable()
 
+Template.piece.computedX = ->
+  @x
+Template.piece.computedY = ->
+  @y
+
 Template.controls.events
   "click button": -> reversed !reversed()
 

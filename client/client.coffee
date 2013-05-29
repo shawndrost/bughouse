@@ -7,9 +7,11 @@ Template.pieces.pieces = ->
 Template.pieces.rendered = -> $(".piece").draggable()
 
 Template.piece.computedX = ->
-  @x
+  val = 0
+  val += 490 if @firstboard
+  val += @x * 51 + 5
 Template.piece.computedY = ->
-  @y
+  @y * 52 - 2
 
 Template.controls.events
   "click button": -> reversed !reversed()

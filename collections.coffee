@@ -1,1 +1,2 @@
-@Pieces = _.extend new Meteor.Collection "players"
+@Pieces = new Meteor.Collection "players"
+@Clocks = new Meteor.Collection "clocks"

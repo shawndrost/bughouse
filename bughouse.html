@@ -3,11 +3,22 @@
 </head>
 
 <body>
+  {{> clocks }}
   {{> board }}
   {{> board }}
   {{> pieces }}
   {{> controls }}
 </body>
+
+<template name="clocks">
+  {{#each clocks}}
+    {{> clock}}
+  {{/each}}
+</template>
+
+<template name="clock">
+  <span style="position:absolute;left:{{computedX}}px;top:{{computedY}}px;">c</span>
+</template>
 
 <template name="pieces">
   {{#each pieces}}

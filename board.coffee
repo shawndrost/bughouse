@@ -9,6 +9,9 @@ _.extend @Board.prototype,
     @
   save: () ->
     Pieces.remove {@boardnum}
+    Clocks.remove {@boardnum}
+    Clocks.insert {@boardnum, playernum: 0}
+    Clocks.insert {@boardnum, playernum: 1}
     @each (row, col, char) =>
       obj = {row, col, char, boardnum: @boardnum}
       Pieces.insert obj

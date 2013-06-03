@@ -1,6 +1,19 @@
 Meteor.startup -> reversed false
 
-Template.pieces =
+_.extend Template.clocks,
+  clocks: ->
+    Clocks.find()
+_.extend Template.clock,
+  computedX: ->
+    res = @boardnum * 1000
+    res = 1000 - res if reversed()
+    res
+  computedY: ->
+    res = @playernum * 50 - 5
+    res = 340 - res if reversed()
+    res
+
+_.extend Template.pieces,
   pieces: -> Pieces.find()
   rendered: ->
     $(".piece").draggable stop: (e) ->
@@ -10,7 +23,7 @@ Template.pieces =
       _id = $(this).attr("id")
       Pieces.update({_id}, {$set: {row, col}})
 
-Template.piece =
+_.extend Template.piece,
   computedX: ->
     res = @row * 50 + 5 + 480 * @boardnum # 0 or 1
     res = 840 - res if reversed()
